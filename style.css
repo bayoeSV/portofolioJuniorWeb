@@ -23,7 +23,7 @@ body {
     sans-serif;
   line-height: 1.6;
   color: var(--warna-gelap);
-  background: var(--warna-terang);
+  background: var(--warna-abu);
 }
 
 img {
