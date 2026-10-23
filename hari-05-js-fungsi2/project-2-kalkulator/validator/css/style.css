@@ -1,0 +1,119 @@
+/* --- Reset & Variabel Global --- */
+:root {
+  --primary-color: #4f46e5;
+  --primary-hover: #4338ca;
+  --bg-color: #f3f4f6;
+  --card-bg: #ffffff;
+  --text-color: #1f2937;
+  --border-color: #d1d5db;
+  --error-color: #dc2626;
+  --disabled-bg: #e5e7eb;
+  --disabled-text: #9ca3af;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* --- Container Form --- */
+#form-daftar {
+  background-color: var(--card-bg);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  width: 100%;
+  max-width: 450px;
+}
+
+/* --- Tata Letak Input Group --- */
+#form-daftar p {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Label & Input --- */
+label {
+  font-weight: 600;
+  font-size: 0.875rem;
+  margin-bottom: 6px;
+}
+
+input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+/* --- Styling Status Galat (Error) --- */
+.galat {
+  font-size: 0.8rem;
+  color: var(--error-color);
+  margin-top: 4px;
+  min-height: 1.25rem; /* Menjaga tata letak agar tidak melompat saat error muncul */
+  display: block;
+}
+
+/* Jika input tidak valid secara aksesibilitas (opsional ditambahkan via JS nanti) */
+input[aria-invalid="true"] {
+  border-color: var(--error-color);
+}
+
+/* --- Tombol Submit --- */
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button[type="submit"]:hover:not(:disabled) {
+  background-color: var(--primary-hover);
+}
+
+/* Kondisi saat button masih disable */
+button[type="submit"]:disabled {
+  background-color: var(--disabled-bg);
+  color: var(--disabled-text);
+  cursor: not-allowed;
+}
+
+/* --- Section Ringkasan (Setelah Submit Sukses) --- */
+#ringkasan {
+  background-color: var(--card-bg);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px;
+  border-left: 5px solid var(--primary-color);
+}
