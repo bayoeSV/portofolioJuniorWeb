@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Klinik</title>
+</head>
+<body>
+    
+<!-- Antrean Loket -->
+<h1>Antrean Loket</h1>
+<p>Sedang dipanggil: <strong id='dipanggil'>-</strong></p>
+<p>Menunggu: <span id='jumlah'>0</span></p>
+
+<button id='ambil'>Ambil Nomor</button>
+<button id='panggil'>Panggil Berikutnya</button>
+<button id='reset'>Reset Antrean</button>
+
+<h3>Daftar Menunggu:</h3>
+<ol id='daftar'></ol>
+
+<h3>Riwayat (5 Terakhir):</h3>
+<ol id='riwayat-antrean'></ol>
+
+<hr>
+
+<!-- Editor Catatan 
+<h1>Editor Catatan</h1>
+<textarea id='editor' rows='6' cols='50' placeholder='Ketik catatan medis di sini...'></textarea>
+<p>
+  <button id='undo' disabled>Undo</button>
+  <button id='redo' disabled>Redo</button>
+  <span id='info'>0/50 Riwayat</span>
+</p> -->
+
+<!-- Script utama -->
+<script type='module' src='js/app.js'></script>
+</body>
+</html>

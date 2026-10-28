@@ -1,3 +1,8 @@
+//contoh penulisan kode yang tidak baik, 
+// misal nama variabel tidak jelas, 
+// fungsi terlalu panjang, 
+// tidak ada komentar, 
+// dan tidak ada pemisahan logika.
 var d = [80,65,90];
 function f(a){var s=0;for(var i=0;i<a.length;i++){s=s+a[i]}return s/a.length}
 function g(x){ if(x>=85){return 'A'}else{ if(x>=70){return 'B'}else{ if(x>=55){return 'C'}else{return 'D'}}}}
@@ -9,31 +14,27 @@ console.log(g(r))
 //buat versi baik dari kode di atas, misal dengan menambahkan komentar, memberi nama variabel yang jelas, dan memisahkan fungsi menjadi beberapa baris.
 var scores = [80, 65, 90];
 
-// Fungsi untuk menghitung rata-rata dari array
-function calculateAverage(array) {
-    var sum = 0;    
-for (var i = 0; i < array.length; i++) {
-        sum += array[i];
-    }
-    return sum / array.length;
+const PAJAK = 0.11;
+const BATAS_GRADE = { A: 85, B: 70, C: 55 };
+
+// Fungsi untuk menghitung rata-rata dari daftar nilai
+function hitungRataRata(daftarNilai) {
+  if (daftarNilai.length === 0) return 0;
+  const jumlah = daftarNilai.reduce((total, nilai) => total + nilai, 0);
+  return jumlah / daftarNilai.length;
 }
-
-
 // Fungsi untuk menentukan grade berdasarkan nilai rata-rata
-function determineGrade(averageScore) {
-    if (averageScore >= 85) {
-        return 'A';
-    } else if (averageScore >= 70) {
-        return 'B';
-    } else if (averageScore >= 55) {
-        return 'C';
-    } else {
-        return 'D';
-    }
+function tentukanGrade(nilai) {
+  if (nilai >= BATAS_GRADE.A) return 'A';
+  if (nilai >= BATAS_GRADE.B) return 'B';
+  if (nilai >= BATAS_GRADE.C) return 'C';
+  return 'D';
 }
-
-if (average == 80) {
-    console.log('bagus');
+// Fungsi untuk menghitung harga dengan pajak
+function hitungHargaDenganPajak(harga) {
+  return harga * (1 + PAJAK);
 }
-var average = calculateAverage(scores);
-console.log(determineGrade(average));
+//mencoba fungsi-fungsi di atas
+console.log("Rata-rata:", hitungRataRata(scores));
+console.log("Grade:", tentukanGrade(hitungRataRata(scores)));
+console.log("Harga dengan pajak:", hitungHargaDenganPajak(100));    

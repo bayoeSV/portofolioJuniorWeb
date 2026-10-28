@@ -15,7 +15,9 @@ export default [
         'no-unused-vars': 'warn'
     }
   }
-];  
+];
+  
+
 //contoh penggunaan eslint dan prettier untuk memperbaiki kode yang buruk
 const d = [80, 65, 90];
 function calculateAverage(a) {
@@ -43,8 +45,8 @@ function coba(){
     console.log(r);
 }
 coba(10)
-/*
- 
+
+ /*
 var d = [80,65,90];
 function f(a){var s=0;for(var i=0;i<a.length;i++){s=s+a[i]}return s/a.length}
 function g(x){ if(x>=85){return 'A'}else{ if(x>=70){return 'B'}else{ if(x>=55){return 'C'}else{return 'D'}}}}

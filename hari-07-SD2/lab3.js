@@ -111,7 +111,7 @@ console.log("Bubble Sort Terurut:", bubbleTerurut.comparisons);
 console.log("Insertion Sort Terurut:", insertionTerurut.comparisons);
 console.log("Bubble Sort Terbalik:", bubbleTerbalik.comparisons);
 console.log("Insertion Sort Terbalik:", insertionTerbalik.comparisons);
-/*
+
 //Ukur bubbleSort vs mergeSort vs Array.sort untuk 10.000 dan 100.000 data; isi tabel waktu dan jelaskan hasilnya dengan Big-O.
 const data10000 = Array.from({ length: 10000 }, () => Math.floor(Math.random() * 10000));
 const data100000 = Array.from({ length: 100000 }, () => Math.floor(Math.random() * 100000));
@@ -134,4 +134,3 @@ console.time("Array.sort 100k");
 data100000.slice().sort((a, b) => a - b);
 console.timeEnd("Array.sort 100k"); 
 
-*/
