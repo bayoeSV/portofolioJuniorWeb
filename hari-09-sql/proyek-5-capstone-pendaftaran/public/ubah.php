@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 require_once __DIR__ . '/../src/bootstrap.php';
-
+cekLoginAdmin();
 $pdo = getConnection();
 $id = filter_var($_GET['id'] ?? null, FILTER_VALIDATE_INT, ['options' => ['min_range' => 1]]);
 $pendaftar = $id === false || $id === null ? null : ambilPendaftarById($pdo, $id);

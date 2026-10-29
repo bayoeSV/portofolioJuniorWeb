@@ -19,4 +19,11 @@ CREATE TABLE pendaftar (
     ON DELETE RESTRICT ON UPDATE CASCADE
 ) ENGINE=InnoDB;
 
+CREATE TABLE admin (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR(100) NOT NULL,
+  password_hash VARCHAR(255) NOT NULL ,
+  dibuat_pada TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB;
+
 CREATE INDEX idx_pendaftar_nama ON pendaftar (nama);

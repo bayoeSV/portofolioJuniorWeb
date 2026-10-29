@@ -41,3 +41,12 @@ function ambilFlash(): ?string
     unset($_SESSION['flash']);
     return $pesan;
 }
+
+//tambahan
+function cekLoginAdmin(): void
+{
+    if (empty($_SESSION['admin_login'])) {
+        setFlash('Silakan login terlebih dahulu.');
+        redirect('login.php');
+    }
+}

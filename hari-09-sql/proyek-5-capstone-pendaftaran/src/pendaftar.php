@@ -90,3 +90,11 @@ function hapusPendaftar(PDO $pdo, int $id): bool
 {
     return $pdo->prepare('DELETE FROM pendaftar WHERE id = :id')->execute(['id' => $id]);
 }
+
+function ambilAdminById(PDO $pdo, int $id): ?array
+{
+    $stmt = $pdo->prepare('SELECT * FROM admin WHERE id = :id');
+    $stmt->execute(['id' => $id]);
+    $baris = $stmt->fetch();
+    return $baris === false ? null : $baris;
+}

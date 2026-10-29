@@ -1,3 +1,7 @@
+<?php
+if(!(isset($lama))){$lama=[];}
+if(!(isset($kelas))){$kelas=[];}
+?>
 <form method='post'>
   <input type='hidden' name='csrf' value='<?= e(tokenCsrf()) ?>'>
   <p>
