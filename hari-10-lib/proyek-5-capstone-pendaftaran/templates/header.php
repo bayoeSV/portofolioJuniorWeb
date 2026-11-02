@@ -25,6 +25,7 @@
             echo "<li class='nav-item'><a href='tambah.php' <a class='nav-link'>Tambah</a> </li> ";
             echo "<li class='nav-item'><a href='login.php' <a class='nav-link'>Login Admin</a> </li>";
           } else {
+             echo "<li class='nav-item'><a href='admin.php' <a class='nav-link'> login as ".$_SESSION['username']."</a> </li> ";
             echo "<li class='nav-item'><a href='admin.php' <a class='nav-link'>Daftar</a> </li> ";
             echo "<li class='nav-item'><a href='logout.php' <a class='nav-link'>logout</a></li>";
           }

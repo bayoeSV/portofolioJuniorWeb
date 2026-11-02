@@ -1,0 +1,7 @@
+php -l public/index.php
+
+Get-ChildItem src\*.php | ForEach-Object { php -l $_.FullName }
+
+Get-Content -Wait C:\xampp\apache\logs\error.log
+
+zend_extension=php_xdebug-3.3.1-8.2-vs16-x86_64.dll

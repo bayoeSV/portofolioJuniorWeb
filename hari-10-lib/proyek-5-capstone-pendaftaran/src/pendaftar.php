@@ -92,13 +92,6 @@ function hapusPendaftar(PDO $pdo, int $id): bool
     return $pdo->prepare('DELETE FROM pendaftar WHERE id = :id')->execute(['id' => $id]);
 }
 
-function ambilAdminById(PDO $pdo, int $id): ?array
-{
-    $stmt = $pdo->prepare('SELECT * FROM admin WHERE id = :id');
-    $stmt->execute(['id' => $id]);
-    $baris = $stmt->fetch();
-    return $baris === false ? null : $baris;
-}
 
 function ambilSemuaPendaftar(PDO $pdo): array
 {
@@ -109,8 +102,6 @@ function ambilSemuaPendaftar(PDO $pdo): array
 }
 
 
-
-
 function ambilBuktiPendaftar(PDO $pdo, int $id): ?array
 {
     $sql = 'SELECT p.id, p.nama, p.email, p.no_hp, p.tgl_daftar, k.nama_kelas
@@ -118,6 +109,23 @@ function ambilBuktiPendaftar(PDO $pdo, int $id): ?array
             WHERE p.id = :id';
     $stmt = $pdo->prepare($sql);
     $stmt->execute(['id' => $id]);
+    $baris = $stmt->fetch();
+    return $baris === false ? null : $baris;
+}
+
+//fungsi untuk admin
+function ambilAdminById(PDO $pdo, int $id): ?array
+{
+    $stmt = $pdo->prepare('SELECT * FROM admin WHERE id = :id');
+    $stmt->execute(['id' => $id]);
+    $baris = $stmt->fetch();
+    return $baris === false ? null : $baris;
+}
+
+function ambilAdminByUsername(PDO $pdo, string $username): ?array
+{
+    $stmt = $pdo->prepare('SELECT * FROM admin WHERE username = :username');
+    $stmt->execute(['username' => $username]);
     $baris = $stmt->fetch();
     return $baris === false ? null : $baris;
 }
