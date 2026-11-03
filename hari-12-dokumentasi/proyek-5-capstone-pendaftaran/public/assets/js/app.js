@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ---------------------------------------------------------
   
   /** 
-   * Elemen tabel yang akan diubah menjadi DataTables.
+   * Elemen tabel yang akan diubah menjadi DataTables Peserta.
    * @global
    * @type {HTMLElement | null} 
    */
@@ -88,5 +88,23 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     
     window.jQuery(tabel).DataTable(dtConfig);
+  }
+   /**Elemen tabel yang akan diubah menjadi DataTables Kelas.
+   */
+  const tabelkelas = document.getElementById('tabelKelas');
+  
+  if (tabelkelas && window.jQuery) {
+    /**
+     * Konfigurasi DataTables bahasa Indonesia.
+     * @global
+     * @type {Object}
+     */
+    const dtConfig = {
+      pageLength: 10,
+      language: { url: 'https://cdn.datatables.net/plug-ins/1.13.8/i18n/id.json' },
+      columnDefs: [{ orderable: false, targets: -1 }] 
+    };
+    
+    window.jQuery(tabelkelas).DataTable(dtConfig);
   }
 });

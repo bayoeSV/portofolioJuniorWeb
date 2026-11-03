@@ -12,9 +12,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   if ($gagal >= 5) {
     $galat = 'Terlalu banyak percobaan. Coba lagi nanti.';
   } elseif (prosesLogin(getConnection(), trim((string) ($_POST['username'] ?? '')), (string) ($_POST['sandi'] ?? ''))) {
-    //jika login berhasil, maka session gagal_login dihapus dan session admin_login diatur ke true
+    //jika login berhasil, maka session gagal_login dihapus dan session admin_id diatur ke true
     unset($_SESSION['gagal_login']);
-    $_SESSION['admin_login'] = true;
+    $_SESSION['admin_id'] = true;
     $_SESSION['username'] = trim((string) ($_POST['username'] ?? ''));
     redirect('admin.php');
   } else {

@@ -20,13 +20,14 @@
       <div id='menu' class='collapse navbar-collapse'>
         <ul class='navbar-nav ms-auto'>
           <?php
-          if (empty($_SESSION['admin_login'])) {
+          if (empty($_SESSION['admin_id'])) {
             echo "<li class='nav-item'><a href='index.php' <a class='nav-link'>User</a> </li> ";
             echo "<li class='nav-item'><a href='tambah.php' <a class='nav-link'>Tambah</a> </li> ";
             echo "<li class='nav-item'><a href='login.php' <a class='nav-link'>Login Admin</a> </li>";
           } else {
             echo "<li class='nav-item'><a href='admin.php' <a class='nav-link'> login as " . $_SESSION['username'] . "</a> </li> ";
-            echo "<li class='nav-item'><a href='admin.php' <a class='nav-link'>Daftar</a> </li> ";
+            echo "<li class='nav-item'><a href='admin.php' <a class='nav-link'>Peserta</a> </li> ";
+             echo "<li class='nav-item'><a href='kelas.php' <a class='nav-link'>Kelas</a> </li> ";
             echo "<li class='nav-item'><a href='logout.php' <a class='nav-link'>logout</a></li>";
           }
           ?>
