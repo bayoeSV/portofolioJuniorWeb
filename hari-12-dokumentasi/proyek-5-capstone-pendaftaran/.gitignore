@@ -1,0 +1,6 @@
+config/config.php
+vendor/
+node_modules/
+composer.lock
+.env
+phpDocumentor.phar
